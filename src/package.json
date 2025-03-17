@@ -2,11 +2,6 @@
   "name": "hecarfest-voting",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
     "server": "nodemon ./src/server.ts",
     "build-server": "npx tsc -p tsconfig.json",
     "start-server": "node ./src/server.js"
