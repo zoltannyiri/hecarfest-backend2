@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import mongoose from "mongoose";
 
 import categoriesModel from "../models/categories.model";
@@ -12,15 +12,15 @@ export default class categoryController {
 
     constructor() {
 
-        this.router.get("/category", async (req, res, next) => {
+        this.router.get("/category", async (req: Request, res: Response, next: NextFunction) => {
             this.GetCategory(req, res).catch(next);
         });
 
-        this.router.post("/category", (req, res, next) => {
+        this.router.post("/category", (req: Request, res: Response, next: NextFunction) => {
             this.NewCategory(req, res).catch(next);
         });
 
-        this.router.put("/category/:id", async (req, res, next) => {
+        this.router.put("/category/:id", async (req: Request, res: Response, next: NextFunction) => {
             this.UpdateCategory(req, res).catch(next);
         });
 

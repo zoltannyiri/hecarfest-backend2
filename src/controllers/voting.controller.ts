@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import mongoose, { mongo } from "mongoose";
 
 import votingModel from "../models/voting.model";
@@ -12,11 +12,11 @@ export default class votingController {
 
     constructor() {
 
-        this.router.get("/votings", async (req, res, next) => {
+        this.router.get("/votings", async (req: Request, res: Response, next: NextFunction) => {
             this.GetVotings(req, res).catch(next);
         });
 
-        this.router.post("/voting/:category", async (req, res, next) => {
+        this.router.post("/voting/:category", async (req: Request, res: Response, next: NextFunction) => {
             this.Voting(req, res).catch(next);
         });
         this.router.get('/voting/details', async (req: Request, res: Response) => {
