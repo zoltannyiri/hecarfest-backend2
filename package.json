@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "server": "nodemon ./src/server.ts",
-    "build-server": "npx tsc -p tsconfig.json",
-    "start-server": "node ./src/server.js"
+    "build": "npx tsc -p tsconfig.json",
+    "start": "node ./src/server.js"
   },
   "private": true,
   "dependencies": {
