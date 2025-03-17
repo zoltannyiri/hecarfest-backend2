@@ -104,7 +104,7 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true,
+    "skipLibCheck": true,                            /* Enable type definitions from the TypeScript standard library (lib.d.ts). */
     "typeRoots": [
       "./src/typings",
       "./node_modules/@types"
