@@ -23,7 +23,8 @@ export default class App {
     }
 
     public listen(): void {
-        this.app.listen(8000, () => {
+        const PORT = process.env.PORT || 8000;
+        this.app.listen(PORT, () => {
             console.log("The application is available on port 8000!");
         })
     }
