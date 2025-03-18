@@ -78,15 +78,15 @@ export default class votingController {
           console.log('Szavazatok:', votings);  // Debug log
           
           if (!votings || votings.length === 0) {
-            return res.status(404).json({ 
+            return res.status(404).json({  // beraktam a returnt
               message: 'Nincsenek szavazatok' 
             });
           }
       
-          res.json(votings);
+          return res.json(votings);
         } catch (error: any) {
           console.error('Hiba történt a szavazatok lekérésénél:', error);  // Debug log
-          res.status(500).json({ 
+          return res.status(500).json({ //beraktam a returnt
             message: 'Hiba történt a szavazatok lekérésénél',
             error: error.message 
           });
