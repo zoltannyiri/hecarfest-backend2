@@ -19,13 +19,14 @@ export default class votingController {
         this.router.post("/voting/:category", async (req: Request, res: Response, next: NextFunction) => {
             this.Voting(req, res).catch(next);
         });
-        this.router.get('/voting/details', async (req: Request, res: Response) => {
-            try {
-                const result = await this.GetDetailedVotings(req, res);
-                res.status(200).json(result);
-            } catch (error) {
-                res.status(500).json({ error: 'Hiba történt a szavazások lekérdezésekor' });
-            }
+        this.router.get('/voting/details', async (req: Request, res: Response, next: NextFunction) => { //bekerült a next
+            // try {
+            //     const result = await this.GetDetailedVotings(req, res);
+            //     res.status(200).json(result);
+            // } catch (error) {
+            //     res.status(500).json({ error: 'Hiba történt a szavazások lekérdezésekor' });
+            // }
+            this.GetDetailedVotings(req, res).catch(next);
         });
 
     }
